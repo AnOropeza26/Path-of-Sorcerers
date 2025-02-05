@@ -4,8 +4,15 @@ class_name Bullet extends Area2D
 
 var max_range := 1000.0 
 
-var _traveled_distance = 0.0
+var _traveled_distance = 0.0 
 
+var damage = 1
+
+func _ready() -> void: 
+	body_entered.connect(func(body: Node) -> void: 
+		if body is Mob: 
+			body.health -= damage 
+)
 
 func _physics_process(delta: float) -> void:
 	var distance := speed * delta 
@@ -16,6 +23,6 @@ func _physics_process(delta: float) -> void:
 	_traveled_distance += distance 
 	if _traveled_distance > max_range: 
 		_destroy()      
-		
+
 func _destroy(): 
 	queue_free()

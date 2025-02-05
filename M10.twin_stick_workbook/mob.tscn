@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpthfmarmsrfw"]
+
+[ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_ialr8"]
+[ext_resource type="Script" path="res://mob.gd" id="1_qqcyd"]
+[ext_resource type="PackedScene" path="res://common/shadow.tscn" id="3_r37m5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cq4k"]
+radius = 17.9988
+height = 123.974
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_got66"]
+radius = 337.428
+
+[node name="Mob" type="CharacterBody2D"]
+position = Vector2(831, 471)
+motion_mode = 1
+script = ExtResource("1_qqcyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ialr8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.58231
+shape = SubResource("CapsuleShape2D_4cq4k")
+
+[node name="Shadow" parent="." instance=ExtResource("3_r37m5")]
+position = Vector2(-202, 130)
+offset = Vector2(202, -54.969)
+
+[node name="DetectionArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_got66")

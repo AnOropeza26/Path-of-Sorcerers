@@ -40,13 +40,13 @@ unique_name_in_owner = true
 rotation = -0.00903286
 
 [node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_s40up")]
-position = Vector2(104.201, -4.71592)
+position = Vector2(138.184, -3.64358)
 
 [node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(108.082, -32.6074)
+position = Vector2(126.073, -32.0397)
 texture = ExtResource("6_ovgm1")
 
 [node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
-position = Vector2(109.251, 25.4584)
+position = Vector2(126.243, 25.9946)
 texture = ExtResource("6_ovgm1")
 flip_v = true
